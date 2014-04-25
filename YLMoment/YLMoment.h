@@ -592,4 +592,39 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  */
 + (NSCalendarUnit)calendarUnitForKey:(NSString *)key;
 
+#pragma mark -
+#pragma mark Additional classes added by Junda <junda@just2us.com>
+
+/**
+ * @abstract Returns the friendly version of the date part (without time).
+ * @return The friendly version string
+ * @discussion We consider
+ Subtract 3 hours
+ * Breakdown:
+ *
+ * Range                            | Sample Output
+ * -------------------------------- | -------------
+ * Midnight - now                   | Today
+ * Yesterday midnight - midnight    | Yesterday
+ * 7 days ago - Yesterday midnight  | Wednesday
+ * 1 year ago - 7 days ago          | 21 Mar
+ * Beyond 1 year                    | 21 Mar 2013
+ */
+- (NSString*)friendlyDay;
+
+/**
+ * @abstract Returns the friendly version of the time part (without date).
+ * @return The friendly version string
+ * @discussion Breakdown:
+ * Range                        | Sample Output
+ * ---------------------------- | -------------
+ * 6am - 12pm (6hr)             | Morning
+ * 12pm - 6pm (6hr)             | Afternoon
+ * 6pm - 12mn (6hr)             | Night
+ * 12mn - 6am (6hr)             | Wee Hours
+ */
+- (NSString*)friendlyTimePeriod;
+
+#pragma mark -
+
 @end

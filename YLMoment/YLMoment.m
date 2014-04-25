@@ -733,4 +733,74 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     }
 }
 
+#pragma mark -
+#pragma mark Additional classes added by Junda <junda@just2us.com>
+
+- (NSString*)friendlyDay {
+    // Get the lang bundle
+    NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
+    
+    // Calculate the diff in days
+    NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
+    NSDate *today = [NSDate date];
+    
+    NSDate *fromDate;
+    NSDate *toDate;
+    [currentCalendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate interval:NULL forDate:_date];
+    [currentCalendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate interval:NULL forDate:today];
+    NSDateComponents *difference = [currentCalendar components:NSDayCalendarUnit
+                                                      fromDate:fromDate toDate:toDate options:0];
+    NSInteger diffInDays = [difference day];
+
+    if (diffInDays < 0) {
+        // Future
+        return [self format:@"d MMM yyyy"];
+    } else if (diffInDays == 0) {
+        // TODO: localize Today and Yesterday in strings file
+        return [langBundle localizedStringForKey:@"Today" value:@"" table:kYLMomentRelativeTimeStringTable];
+    } else if (diffInDays == 1) {
+        return [langBundle localizedStringForKey:@"Yesterday" value:@"" table:kYLMomentRelativeTimeStringTable];
+    } else if (diffInDays < 7) {
+        return [self format:@"EEEE"];
+    } else if (diffInDays < 360) {  // Approximately 1 year
+        return [self format:@"d MMM"];
+    } else {
+        return [self format:@"d MMM yyyy"];
+    }
+}
+
+/**
+ * @abstract Returns the friendly version of the time part (without date).
+ * @return The friendly version string
+ * @discussion Breakdown:
+ * Range                        | Sample Output
+ * ---------------------------- | -------------
+ * 6am - 12pm (6hr)             | Morning
+ * 12pm - 6pm (6hr)             | Afternoon
+ * 6pm - 12mn (6hr)             | Night
+ * 12mn - 6am (6hr)             | Wee Hours
+ */
+- (NSString*)friendlyTimePeriod {
+    // Get the lang bundle
+    NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
+    
+    // Calculate the diff in days
+    NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
+    NSDateComponents *dateComponents = [currentCalendar components:(NSHourCalendarUnit) fromDate:_date];
+    
+    NSInteger hour = [dateComponents hour];
+    
+    if (hour < 6) {
+        return [langBundle localizedStringForKey:@"Wee Hours" value:@"" table:kYLMomentRelativeTimeStringTable];
+    } else if (hour < 12) {
+        return [langBundle localizedStringForKey:@"Morning" value:@"" table:kYLMomentRelativeTimeStringTable];
+    } else if (hour < 18) {
+        return [langBundle localizedStringForKey:@"Afternoon" value:@"" table:kYLMomentRelativeTimeStringTable];
+    } else {
+        return [langBundle localizedStringForKey:@"Night" value:@"" table:kYLMomentRelativeTimeStringTable];
+    }
+}
+
+#pragma mark -
+
 @end
