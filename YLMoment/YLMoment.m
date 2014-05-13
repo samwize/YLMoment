@@ -740,21 +740,13 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     // Get the lang bundle
     NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
     
-    // Calculate the diff in days
-    NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
-    NSDate *today = [NSDate date];
-    
-    NSDate *fromDate;
-    NSDate *toDate;
-    [currentCalendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate interval:NULL forDate:_date];
-    [currentCalendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate interval:NULL forDate:today];
-    NSDateComponents *difference = [currentCalendar components:NSDayCalendarUnit
-                                                      fromDate:fromDate toDate:toDate options:0];
-    NSInteger diffInDays = [difference day];
+    NSInteger diffInDays = -[self daysFromToday];
 
-    if (diffInDays < 0) {
+    if (diffInDays < -1) {
         // Future
         return [self format:@"d MMM yyyy"];
+    } else if (diffInDays == -1) {
+        return [langBundle localizedStringForKey:@"Tomorrow" value:@"" table:kYLMomentRelativeTimeStringTable];
     } else if (diffInDays == 0) {
         // TODO: localize Today and Yesterday in strings file
         return [langBundle localizedStringForKey:@"Today" value:@"" table:kYLMomentRelativeTimeStringTable];
@@ -799,6 +791,21 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     } else {
         return [langBundle localizedStringForKey:@"Night" value:@"" table:kYLMomentRelativeTimeStringTable];
     }
+}
+
+- (int)daysFromToday {
+    NSCalendar *currentCalendar  = _calendar ?: [[[self class] proxy] calendar];
+    NSDate *today = [NSDate date];
+    
+    NSDate *fromDate;
+    NSDate *toDate;
+    [currentCalendar rangeOfUnit:NSDayCalendarUnit startDate:&fromDate interval:NULL forDate:today];
+    [currentCalendar rangeOfUnit:NSDayCalendarUnit startDate:&toDate interval:NULL forDate:_date];
+    NSDateComponents *difference = [currentCalendar components:NSDayCalendarUnit
+                                                      fromDate:fromDate toDate:toDate options:0];
+
+    NSInteger diffInDays = [difference day];
+    return diffInDays;
 }
 
 #pragma mark -

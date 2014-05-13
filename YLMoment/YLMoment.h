@@ -598,14 +598,14 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 /**
  * @abstract Returns the friendly version of the date part (without time).
  * @return The friendly version string
- * @discussion We consider
- Subtract 3 hours
+ * @discussion
  * Breakdown:
  *
  * Range                            | Sample Output
  * -------------------------------- | -------------
  * Midnight - now                   | Today
  * Yesterday midnight - midnight    | Yesterday
+ * 1 day later                      | Tomorrow
  * 7 days ago - Yesterday midnight  | Wednesday
  * 1 year ago - 7 days ago          | 21 Mar
  * Beyond 1 year                    | 21 Mar 2013
@@ -624,6 +624,10 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
  * 12mn - 6am (6hr)             | Wee Hours
  */
 - (NSString*)friendlyTimePeriod;
+
+// Returns the number of days from today
+// eg 0 is today, 1 is tomorrow, -1 is yesterday
+- (int)daysFromToday;
 
 #pragma mark -
 
