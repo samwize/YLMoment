@@ -19,3 +19,17 @@
 "MM"     = "%d meses";
 "y"      = "un año";
 "yy"     = "%d años";
+
+"Today" = "Hoy";
+
+"Tomorrow" = "Mañana";
+
+"Yesterday" = "Ayer";
+
+"Wee Hours" = "Horas Wee";
+
+"Morning" = "Mañana";
+
+"Afternoon" = "Tarde";
+
+"Night" = "Noche";

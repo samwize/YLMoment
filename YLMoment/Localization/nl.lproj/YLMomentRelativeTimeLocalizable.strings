@@ -19,3 +19,17 @@
 "MM"     = "%d maand";
 "y"      = "een jaar";
 "yy"     = "%d jaar";
+
+"Today" = "Vandaag";
+
+"Tomorrow" = "Morgen";
+
+"Yesterday" = "Gisteren";
+
+"Wee Hours" = "Wee Hours";
+
+"Morning" = "Ochtend";
+
+"Afternoon" = "Middag";
+
+"Night" = "Nacht";

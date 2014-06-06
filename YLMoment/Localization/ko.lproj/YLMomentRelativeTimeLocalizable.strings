@@ -20,16 +20,16 @@
 "y"      = "a year";
 "yy"     = "%d years";
 
-"Today" = "Today";
+"Today" = "오늘";
 
-"Tomorrow" = "Tomorrow";
+"Tomorrow" = "내일";
 
-"Yesterday" = "Yesterday";
+"Yesterday" = "어제";
 
-"Wee Hours" = "Wee Hours";
+"Wee Hours" = "새벽 시간";
 
-"Morning" = "Morning";
+"Morning" = "아침";
 
-"Afternoon" = "Afternoon";
+"Afternoon" = "오후";
 
-"Night" = "Night";
+"Night" = "야간";

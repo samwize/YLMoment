@@ -19,3 +19,17 @@
 "MM"     = "%d个月";
 "y"      = "1年";
 "yy"     = "%d年";
+
+"Today" = "今天";
+
+"Tomorrow" = "明天";
+
+"Yesterday" = "昨天";
+
+"Wee Hours" = "凌晨";
+
+"Morning" = "早上";
+
+"Afternoon" = "下午";
+
+"Night" = "夜晚";

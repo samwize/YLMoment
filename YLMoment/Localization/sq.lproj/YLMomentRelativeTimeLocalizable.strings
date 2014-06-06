@@ -19,3 +19,17 @@
 "MM"     = "%d muaj";
 "y"      = "një vit";
 "yy"     = "%d vite";
+
+"Today" = "Sot";
+
+"Tomorrow" = "Nesër";
+
+"Yesterday" = "Dje";
+
+"Wee Hours" = "Wee Orë";
+
+"Morning" = "Mëngjes";
+
+"Afternoon" = "Pasdite";
+
+"Night" = "Natë";
