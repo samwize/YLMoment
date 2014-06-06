@@ -744,7 +744,8 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 
     if (diffInDays < -1) {
         // Future
-        return [self format:@"d MMM yyyy"];
+        NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"dMMMyyyy" options:0 locale:[NSLocale currentLocale]];
+        return [self format:dateFormat];
     } else if (diffInDays == -1) {
         return [langBundle localizedStringForKey:@"Tomorrow" value:@"" table:kYLMomentRelativeTimeStringTable];
     } else if (diffInDays == 0) {
@@ -753,11 +754,14 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     } else if (diffInDays == 1) {
         return [langBundle localizedStringForKey:@"Yesterday" value:@"" table:kYLMomentRelativeTimeStringTable];
     } else if (diffInDays < 7) {
-        return [self format:@"EEEE"];
+        NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"EEEE" options:0 locale:[NSLocale currentLocale]];
+        return [self format:dateFormat];
     } else if (diffInDays < 360) {  // Approximately 1 year
-        return [self format:@"d MMM"];
+        NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"dMMM" options:0 locale:[NSLocale currentLocale]];
+        return [self format:dateFormat];
     } else {
-        return [self format:@"d MMM yyyy"];
+        NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"dMMMyyyy" options:0 locale:[NSLocale currentLocale]];
+        return [self format:dateFormat];
     }
 }
 
