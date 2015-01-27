@@ -629,6 +629,34 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 // eg 0 is today, 1 is tomorrow, -1 is yesterday
 - (int)daysFromToday;
 
+/** A version of fromDate:withSuffix: known as V1 (for a lack of a better name)
+ *
+ * The range was modified to suit a common range of less than 7 days. 
+ *
+ * Used by: Poo Keeper
+ *
+ * For 25 to 7*24 hours, the format is "d1/dd h1/hh", which is concatenating the days and hours 
+ * components. The order might not be correctly represented in a localized language.
+ *
+ * d1 and h1 was introduced too to mean "1 day" instead of "a day"
+ *
+ * Range                       | Key | Sample Output
+ * --------------------------- | --- | -------------
+ * 0 to 45 seconds             | s   | a few seconds ago
+ * 45 to 90 seconds            | m1  | 1 minute ago
+ * 90 seconds to 45 minutes    | mm  | 2 minutes ago ... 45 minutes ago
+ * 45 to 90 minutes            | h1  | 1 hour ago
+ * 90 minutes to 23 hours      | hh  | 2 hours ago ... 23 hours ago
+ * 23 to 25 hours              | d1  | 1 day ago
+ * 25 hours to 7*24 hours      | d1/dd h1/hh  | 1 day 1 hour ago ... 7 days 23 hours ago
+ * 8 days to any               | dd  | 8 days ago ... 999 days ago
+ */
+- (NSString *)friendlyStringV1FromDate:(NSDate *)date withSuffix:(BOOL)suffixed;
+
+/** shortcut to friendlyStringV1FromDate:withSuffix: */
+- (NSString *)friendlyStringV1FromTodayWithSuffix:(BOOL)suffixed;
+- (NSString *)friendlyStringV1FromToday;
+
 #pragma mark -
 
 @end

@@ -812,6 +812,125 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     return diffInDays;
 }
 
+/** A version of fromDate:withSuffix: known as V1 (for a lack of a better name)
+ *
+ * The range was modified to suit a common range of less than 7 days.
+ *
+ * Used by: Poo Keeper
+ *
+ * For 25 to 7*24 hours, the format is "d1/dd h1/hh", which is concatenating the days and hours
+ * components. The order might not be correctly represented in a localized language.
+ *
+ * d1 and h1 was introduced too to mean "1 day" instead of "a day"
+ *
+ * Range                       | Key | Sample Output
+ * --------------------------- | --- | -------------
+ * 0 to 45 seconds             | s   | a few seconds ago
+ * 45 to 90 seconds            | m1  | 1 minute ago
+ * 90 seconds to 45 minutes    | mm  | 2 minutes ago ... 45 minutes ago
+ * 45 to 90 minutes            | h1  | 1 hour ago
+ * 90 minutes to 23 hours      | hh  | 2 hours ago ... 23 hours ago
+ * 23 to 25 hours              | d1  | 1 day ago
+ * 25 hours to 7*24 hours      | d1/dd h1/hh  | 1 day 1 hour ago ... 7 days 23 hours ago
+ * 8 days to any               | dd  | 8 days ago ... 999 days ago
+ */
+- (NSString *)friendlyStringV1FromDate:(NSDate *)date withSuffix:(BOOL)suffixed {
+    // Get the lang bundle
+    NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
+    
+    // Compute the time interval
+    double referenceTime = [_date timeIntervalSinceDate:date];
+    double seconds       = round(fabs(referenceTime));
+    double minutes       = round(seconds / 60.0f);
+    double hours         = round(minutes / 60.0f);
+    double days          = round(hours / 24.0f);
+    
+    // Build the formatted string
+    NSString *formattedString = @"";
+    int unit                  = 0;
+    if (seconds < 45)
+    {
+        formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:kYLMomentRelativeTimeStringTable];
+        unit            = seconds;
+    } else if (minutes == 1)
+    {
+        formattedString = [langBundle localizedStringForKey:@"m1" value:@"%d minute" table:kYLMomentRelativeTimeStringTable];
+        unit            = minutes;
+    } else if (minutes < 45)
+    {
+        formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
+        unit            = minutes;
+    } else if (hours == 1)
+    {
+        formattedString = [langBundle localizedStringForKey:@"h1" value:@"%d hour" table:kYLMomentRelativeTimeStringTable];
+        unit            = hours;
+    } else if (hours < 24)
+    {
+        formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
+        unit            = hours;
+    } else if (hours < 25)
+    {
+        formattedString = [langBundle localizedStringForKey:@"d1" value:@"%d day" table:kYLMomentRelativeTimeStringTable];
+        unit            = days;
+    } else if (days <= 7*24)
+    {
+        // Format "d1/dd h1/hh"
+        
+        NSString *formattedDay = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable];
+        if (days == 1)
+            formattedDay = [langBundle localizedStringForKey:@"d1" value:@"%d day" table:kYLMomentRelativeTimeStringTable];
+        
+        int hours_remainder = (int)hours % 24;
+        NSString *formattedHours = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
+        if (hours_remainder == 0) {
+            formattedHours = nil;
+        } else if (hours_remainder == 1) {
+            formattedHours = [langBundle localizedStringForKey:@"h1" value:@"%d hour" table:kYLMomentRelativeTimeStringTable];
+        }
+        
+        // Concat
+        // Note we already resolved for the hours part
+        if (formattedHours == nil)
+            formattedString = formattedDay;
+        else
+            formattedString = [formattedDay stringByAppendingFormat:@" %@", formattedHours];
+        unit            = days;
+    } else
+    {
+        formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable];
+        unit            = days;
+    }
+    formattedString = [NSString stringWithFormat:formattedString, unit];
+    
+    // If the string needs to be suffixed
+    if (suffixed)
+    {
+        BOOL isFuture = (referenceTime > 0);
+        
+        NSString *suffixedString = nil;
+        if (isFuture)
+        {
+            suffixedString = [langBundle localizedStringForKey:@"future" value:@"in %@" table:kYLMomentRelativeTimeStringTable];
+        } else
+        {
+            suffixedString = [langBundle localizedStringForKey:@"past" value:@"%@ ago" table:kYLMomentRelativeTimeStringTable];
+        }
+        
+        formattedString = [NSString stringWithFormat:suffixedString, formattedString];
+    }
+    
+    return formattedString;
+}
+
+- (NSString *)friendlyStringV1FromTodayWithSuffix:(BOOL)suffixed {
+    return [self friendlyStringV1FromDate:[NSDate date] withSuffix:suffixed];
+}
+
+- (NSString *)friendlyStringV1FromToday {
+    return [self friendlyStringV1FromTodayWithSuffix:YES];
+}
+
+
 #pragma mark -
 
 @end
