@@ -872,7 +872,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     {
         formattedString = [langBundle localizedStringForKey:@"d1" value:@"%d day" table:kYLMomentRelativeTimeStringTable];
         unit            = days;
-    } else if (days <= 7*24)
+    } else if (days <= 7)
     {
         // Format "d1/dd h1/hh"
         
@@ -888,8 +888,11 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
             formattedHours = [langBundle localizedStringForKey:@"h1" value:@"%d hour" table:kYLMomentRelativeTimeStringTable];
         }
         
+        // Resolve hours part
+        if (formattedHours)
+            formattedHours = [NSString stringWithFormat:formattedHours, hours_remainder];
+        
         // Concat
-        // Note we already resolved for the hours part
         if (formattedHours == nil)
             formattedString = formattedDay;
         else
