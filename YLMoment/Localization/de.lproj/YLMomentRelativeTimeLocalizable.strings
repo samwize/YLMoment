@@ -10,7 +10,7 @@
 "past"   = "vor %@";
 "s"      = "ein paar Sekunden";
 "m"      = "einer Minute";
-"m1"     = "%s Minute";
+"m1"     = "%d Minute";
 "mm"     = "%d Minuten";
 "h"      = "einer Stunde";
 "h1"     = "%d Stunde";
