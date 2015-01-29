@@ -109,6 +109,42 @@
 }
 
 
+- (void)testProgressiveHourly
+{
+    [_now subtractAmountOfTime:1 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"1 hour ago");
+
+    [_now subtractAmountOfTime:1 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"2 hours ago");
+
+    [_now subtractAmountOfTime:2 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"4 hours ago");
+
+    [_now subtractAmountOfTime:8 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"12 hours ago");
+
+    [_now subtractAmountOfTime:6 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"18 hours ago");
+
+    [_now subtractAmountOfTime:6 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"1 day ago");
+
+    [_now subtractAmountOfTime:4 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"1 day 4 hours ago");
+
+    [_now subtractAmountOfTime:8 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"1 day 12 hours ago");
+
+    [_now subtractAmountOfTime:4 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"1 day 16 hours ago");
+
+    [_now subtractAmountOfTime:8 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"2 days ago");
+
+    [_now subtractAmountOfTime:6 forUnitKey:@"h"];
+    expect([_now friendlyStringV1FromDate:_dateNow withSuffix:YES]).to.equal(@"2 days 6 hours ago");
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
