@@ -10,10 +10,13 @@
 "past"   = "il y a %@";
 "s"      = "quelques secondes";
 "m"      = "une minute";
+"m1"     = "%d minute";
 "mm"     = "%d minutes";
 "h"      = "une heure";
+"h1"     = "%d heure";
 "hh"     = "%d heures";
 "d"      = "un jour";
+"d1"     = "%d jour";
 "dd"     = "%d jours";
 "M"      = "un mois";
 "MM"     = "%d mois";
