@@ -236,8 +236,8 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     formatter.timeZone         = _timeZone ?: [[[self class] proxy] timeZone];
     if (!dateFormat)
     {
-        formatter.dateStyle = (_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
-        formatter.timeStyle = (_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
+        formatter.dateStyle = ((NSUInteger)_dateStyle != -1) ? _dateStyle : [[[self class] proxy] dateStyle];
+        formatter.timeStyle = ((NSUInteger)_timeStyle != -1) ? _timeStyle : [[[self class] proxy] timeStyle];
     } else
     {
         formatter.dateFormat = dateFormat;
@@ -402,7 +402,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
             components.month = amount;
             break;
         case kCFCalendarUnitWeekOfMonth:
-            components.week = amount;
+            components.weekOfMonth = amount;
             break;
         case kCFCalendarUnitDay:
             components.day = amount;
