@@ -837,8 +837,6 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
 - (NSString *)friendlyStringV1FromDate:(NSDate *)date withSuffix:(BOOL)suffixed {
     // Get the lang bundle
     NSBundle *langBundle = _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
-    // In unit testing, _langBundle seems to be set wrongly - a bug so we remove it
-//    NSBundle *langBundle = [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
     
     // Compute the time interval
     double referenceTime = [_date timeIntervalSinceDate:date];

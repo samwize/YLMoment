@@ -24,7 +24,10 @@
     [super setUp];
     
     [[YLMoment proxy] setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    
     self.now = [[YLMoment alloc] initWithDateAsString:@"2015-01-27" format:@"yyyy-MM-dd"];
+    // Must set locale this way!
+    self.now.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
     self.dateNow = [self.now date];
 }
 
