@@ -809,7 +809,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
                                                       fromDate:fromDate toDate:toDate options:0];
 
     NSInteger diffInDays = [difference day];
-    return diffInDays;
+    return (int)diffInDays;
 }
 
 /** A version of fromDate:withSuffix: known as V1 (for a lack of a better name)
