@@ -19,8 +19,10 @@
 "d1"     = "%d dag";
 "dd"     = "%d dagen";
 "M"      = "een maand";
+"M1"     = "%d maand";
 "MM"     = "%d maand";
 "y"      = "een jaar";
+"y1"     = "%d jaar";
 "yy"     = "%d jaar";
 
 "Today" = "Vandaag";

@@ -933,7 +933,11 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     return [self friendlyStringV1FromTodayWithSuffix:YES];
 }
 
+#pragma mark - Helpers
 
-#pragma mark -
+// Expose this to Swift
+- (NSBundle*)langBundle {
+    return _langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
+}
 
 @end

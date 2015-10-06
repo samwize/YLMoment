@@ -657,6 +657,8 @@ static NSString * const YLMomentIso8601Format = @"yyyy-MM-dd'T'HH:mm:ssZ";
 - (NSString *)friendlyStringV1FromTodayWithSuffix:(BOOL)suffixed;
 - (NSString *)friendlyStringV1FromToday;
 
-#pragma mark -
+#pragma mark - Helpers
+
+- (NSBundle*)langBundle;
 
 @end

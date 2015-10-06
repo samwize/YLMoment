@@ -19,8 +19,10 @@
 "d1"     = "%d dia";
 "dd"     = "%d dias";
 "M"      = "um mês";
+"M1"     = "%d mês";
 "MM"     = "%d meses";
 "y"      = "um ano";
+"y1"     = "%d ano";
 "yy"     = "%d anos";
 
 "Today" = "Hoje";

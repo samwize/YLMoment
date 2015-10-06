@@ -19,8 +19,10 @@
 "d1"     = "%d ditë";
 "dd"     = "%d ditë";
 "M"      = "një muaj";
+"M1"     = "%d muaj";
 "MM"     = "%d muaj";
 "y"      = "një vit";
+"y1"     = "%d vit";
 "yy"     = "%d vite";
 
 "Today" = "Sot";

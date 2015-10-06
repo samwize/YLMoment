@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		276FA9FF18D02B18003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
 		276FAA0018D02B1A003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
+		3E02B1FD1BC361680002AA71 /* YLMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02B1FC1BC361680002AA71 /* YLMoment.swift */; settings = {ASSET_TAGS = (); }; };
+		3E02B1FE1BC361680002AA71 /* YLMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E02B1FC1BC361680002AA71 /* YLMoment.swift */; settings = {ASSET_TAGS = (); }; };
+		3E02B2001BC361BB0002AA71 /* YLMomentTests+Age.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E02B1FF1BC361BB0002AA71 /* YLMomentTests+Age.m */; settings = {ASSET_TAGS = (); }; };
+		3E02B2011BC361BB0002AA71 /* YLMomentTests+Age.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E02B1FF1BC361BB0002AA71 /* YLMomentTests+Age.m */; settings = {ASSET_TAGS = (); }; };
 		3EB795501A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB7954F1A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m */; };
 		3EB795511A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB7954F1A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m */; };
 		A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
@@ -59,6 +63,10 @@
 		14D0DA19A9AD71A1D60C5348 /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
 		276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangZh.m"; sourceTree = "<group>"; };
 		2776776318D3FF9C00FB3B63 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/YLMomentRelativeTimeLocalizable.strings; sourceTree = "<group>"; };
+		3E02B1FA1BC361670002AA71 /* iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		3E02B1FB1BC361680002AA71 /* OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		3E02B1FC1BC361680002AA71 /* YLMoment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YLMoment.swift; sourceTree = "<group>"; };
+		3E02B1FF1BC361BB0002AA71 /* YLMomentTests+Age.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTests+Age.m"; sourceTree = "<group>"; };
 		3EB7954F1A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMomentTests_FriendlyStrings.m; sourceTree = "<group>"; };
 		41073226CD97C2B6EB49B946 /* Pods-osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.debug.xcconfig"; sourceTree = "<group>"; };
 		4941EEE29A5C70C56ED3E897 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 				F425CFDB182844D1002CABDC /* YLMomentTests+Helpers.m */,
 				F425CFDC182844D1002CABDC /* YLMomentTests+SOD_EOD.m */,
 				3EB7954F1A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m */,
+				3E02B1FF1BC361BB0002AA71 /* YLMomentTests+Age.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -203,6 +212,9 @@
 				F43B57F418B22E41001E9993 /* Localization */,
 				F43B57FD18B22E41001E9993 /* YLMoment.h */,
 				F43B57FE18B22E41001E9993 /* YLMoment.m */,
+				3E02B1FC1BC361680002AA71 /* YLMoment.swift */,
+				3E02B1FA1BC361670002AA71 /* iOSTests-Bridging-Header.h */,
+				3E02B1FB1BC361680002AA71 /* OSXTests-Bridging-Header.h */,
 			);
 			name = YLMoment;
 			path = ../YLMoment;
@@ -324,6 +336,7 @@
 		F4605D0A181C326A007F83EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = YannickLoriot;
 				TargetAttributes = {
@@ -448,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB795511A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m in Sources */,
+				3E02B1FE1BC361680002AA71 /* YLMoment.swift in Sources */,
 				F425CFEC182844E1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 				F425CFED182844E1002CABDC /* YLMomentTests+Create.m in Sources */,
 				F43B580218B22E41001E9993 /* YLMoment.m in Sources */,
@@ -464,6 +478,7 @@
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
 				FA3A095618BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */,
+				3E02B2011BC361BB0002AA71 /* YLMomentTests+Age.m in Sources */,
 				F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB795501A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m in Sources */,
+				3E02B1FD1BC361680002AA71 /* YLMoment.swift in Sources */,
 				F425CFE2182844D1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 				F425CFE5182844D1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
 				F43B580118B22E41001E9993 /* YLMoment.m in Sources */,
@@ -489,6 +505,7 @@
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				FA3A095518BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
+				3E02B2001BC361BB0002AA71 /* YLMomentTests+Age.m in Sources */,
 				F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +555,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -573,10 +591,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSXTests/OSXTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "../YLMoment/OSXTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -588,6 +609,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -618,9 +640,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "OSXTests/OSXTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "../YLMoment/OSXTests-Bridging-Header.h";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -630,7 +654,7 @@
 			buildSettings = {
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -642,7 +666,7 @@
 			buildSettings = {
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = iphoneos;
 			};
@@ -666,6 +690,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -690,11 +715,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOSTests/iOSTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "../YLMoment/iOSTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -717,6 +745,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -735,10 +764,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "iOSTests/iOSTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "../YLMoment/iOSTests-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
