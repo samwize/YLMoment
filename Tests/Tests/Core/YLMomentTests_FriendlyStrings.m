@@ -10,6 +10,8 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
+#import "YLMoment_UnitTestAdditions.h"
+
 #import "YLMoment.h"
 
 @interface YLMomentTests_FriendlyStrings : XCTestCase
