@@ -24,14 +24,11 @@
  *
  */
 
-#ifndef YLMoment_h
-#define YLMoment_h
-
 #import "YLMomentObject.h"
-#import "YLMoment+Components.h"
-#import "YLMoment+Description.h"
-#import "YLMoment+Helpers.h"
-#import "YLMoment+Manipulation.h"
-#import "YLMoment+RelativeTime.h"
 
-#endif
+@interface YLMoment (Bundle)
+
+/** Returns the YLMoment lang bundle corresponding to a given locale identifier. */
+- (NSBundle *)langBundleForLocaleWithIdentifier:(NSString *)localeIdentifier;
+
+@end

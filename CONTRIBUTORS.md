@@ -8,13 +8,17 @@ Please keep the list sorted.
 
 ### Lead developer
 
- * [Yannick Loriot](https://github.com/YannickL)
+ * [Yannick Loriot](https://github.com/yannickl)
 
 ### People and companies, who have contributed
 
  * [Alex Shepard](https://github.com/alexshepard)
  * [Applezqp](https://github.com/applezqp)
+ * [Chao Ruan](https://github.com/rcgary)
+ * [Darren Tong](https://github.com/strictlyd)
  * [Douglas Brito de Medeiros](https://github.com/DouglasMedeiros)
+ * [Jhonathan Wyterlin](https://github.com/jwyterlin)
  * [Fanyj](https://github.com/fanyj)
  * [Michel Albers](https://github.com/michelalbers)
+ * [Orientemario](https://github.com/orientemario)
  * [Pieter Claerhout](https://github.com/pieterclaerhout)
