@@ -26,7 +26,11 @@ extension YLMoment {
     /// - Parameter maxComponents: Default is show all 3 components (year, month and day)
     public func ageFromDate(_ date: Date, withDelimiter delimiter: String? = nil, withMaxComponents maxComponents: Int = 3) -> String {
         var maxComponents = maxComponents
-        let langBundle = self.langBundle()
+        
+        // FIX:
+        // langBundle is private in YLMoment.m
+        // let langBundle = self.langBundle
+        let langBundle = Bundle.main
         
         let calendar = Calendar.current
         
@@ -55,14 +59,18 @@ extension YLMoment {
             var componentsLastMonth = components2
             if componentsLastMonth.month == 0 {
                 componentsLastMonth.month = 12
-                componentsLastMonth.year -= 1
+                if let y = componentsLastMonth.year {
+                    componentsLastMonth.year = y - 1
+                }
             } else {
-                componentsLastMonth.month -= 1
+                if let m = componentsLastMonth.month {
+                    componentsLastMonth.month = m - 1
+                }
             }
-            let lastMonthDate = calendar.date(from: componentsLastMonth)
-            let daysInMonth = (calendar as NSCalendar).range(of: NSCalendar.Unit.day, in: NSCalendar.Unit.month, for: lastMonthDate!)
-            
-            days += daysInMonth.length
+            if let lastMonthDate = calendar.date(from: componentsLastMonth) {
+                let daysInMonth = (calendar as NSCalendar).range(of: .day, in: .month, for: lastMonthDate)
+                days += daysInMonth.length
+            }
             months -= 1
         }
 
@@ -75,36 +83,36 @@ extension YLMoment {
         var age = ""
         
         if years != 0 {
-            var formattedString = langBundle?.localizedString(forKey: "yy", value: "%d years", table: "YLMomentRelativeTimeLocalizable")
+            var formattedString = langBundle.localizedString(forKey: "yy", value: "%d years", table: "YLMomentRelativeTimeLocalizable")
             if years == 1 {
-                formattedString = langBundle?.localizedString(forKey: "y1", value: "%d year", table: "YLMomentRelativeTimeLocalizable")
+                formattedString = langBundle.localizedString(forKey: "y1", value: "%d year", table: "YLMomentRelativeTimeLocalizable")
             }
             if maxComponents > 0 {
-                age = NSString(format: formattedString as! NSString, years) as String
+                age = NSString(format: formattedString as NSString, years) as String
                 age += (delimiter != nil) ? (delimiter! as String + " ") : " "
                 maxComponents -= 1
             }
         }
         
         if months != 0 {
-            var formattedString = langBundle?.localizedString(forKey: "MM", value: "%d months", table: "YLMomentRelativeTimeLocalizable")
+            var formattedString = langBundle.localizedString(forKey: "MM", value: "%d months", table: "YLMomentRelativeTimeLocalizable")
             if months == 1 {
-                formattedString = langBundle?.localizedString(forKey: "M1", value: "%d month", table: "YLMomentRelativeTimeLocalizable")
+                formattedString = langBundle.localizedString(forKey: "M1", value: "%d month", table: "YLMomentRelativeTimeLocalizable")
             }
             if maxComponents > 0 {
-                age += NSString(format: formattedString as! NSString, months) as String
+                age += NSString(format: formattedString as NSString, months) as String
                 age += (delimiter != nil) ? (delimiter! as String + " ") : " "
                 maxComponents -= 1
             }
         }
         
         if age.characters.count == 0 || days != 0 {
-            var formattedString = langBundle?.localizedString(forKey: "dd", value: "%d days", table: "YLMomentRelativeTimeLocalizable")
+            var formattedString = langBundle.localizedString(forKey: "dd", value: "%d days", table: "YLMomentRelativeTimeLocalizable")
             if days <= 1 {
-                formattedString = langBundle?.localizedString(forKey: "d1", value: "%d day", table: "YLMomentRelativeTimeLocalizable")
+                formattedString = langBundle.localizedString(forKey: "d1", value: "%d day", table: "YLMomentRelativeTimeLocalizable")
             }
             if maxComponents > 0 {
-                age += NSString(format: formattedString as! NSString, days) as String
+                age += NSString(format: formattedString as NSString, days) as String
             }
         }
         

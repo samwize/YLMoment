@@ -10,6 +10,12 @@
 		276FA9FF18D02B18003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
 		276FAA0018D02B1A003A3E3F /* YLMomentTest+LangZh.m in Sources */ = {isa = PBXBuildFile; fileRef = 276FA9FE18D02B18003A3E3F /* YLMomentTest+LangZh.m */; };
 		37964439F7129B6F923871D5 /* libPods-OSXTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A180E37FC036D862BDE421 /* libPods-OSXTests.a */; };
+		3EC97D9C1EB8E1C800DE39C8 /* YLMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D9B1EB8E1C800DE39C8 /* YLMoment.swift */; };
+		3EC97D9D1EB8E1C800DE39C8 /* YLMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D9B1EB8E1C800DE39C8 /* YLMoment.swift */; };
+		3EC97DA11EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D9F1EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m */; };
+		3EC97DA21EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D9F1EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m */; };
+		3EC97DA31EB8E20800DE39C8 /* YLMomentTests+Age.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DA01EB8E20800DE39C8 /* YLMomentTests+Age.m */; };
+		3EC97DA41EB8E20800DE39C8 /* YLMomentTests+Age.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DA01EB8E20800DE39C8 /* YLMomentTests+Age.m */; };
 		A083DAF91BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m in Sources */ = {isa = PBXBuildFile; fileRef = A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */; };
 		A0B09FC41BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0B09FB91BE1A52C00BF37AC /* YLMomentRelativeTimeLocalizable.strings */; };
 		A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */ = {isa = PBXBuildFile; fileRef = A54704E218B0759600497886 /* YLMomentTest+LangPt.m */; };
@@ -74,6 +80,9 @@
 		30A180E37FC036D862BDE421 /* libPods-OSXTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSXTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DBD5EB9D564C598ED8E940 /* libPods-iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E4A87EF343CAC6A71D710E /* Pods-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTests/Pods-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		3EC97D9B1EB8E1C800DE39C8 /* YLMoment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLMoment.swift; path = ../YLMoment/YLMoment.swift; sourceTree = "<group>"; };
+		3EC97D9F1EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLMomentTests_FriendlyStrings.m; path = Core/YLMomentTests_FriendlyStrings.m; sourceTree = "<group>"; };
+		3EC97DA01EB8E20800DE39C8 /* YLMomentTests+Age.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YLMomentTests+Age.m"; path = "Core/YLMomentTests+Age.m"; sourceTree = "<group>"; };
 		4DC80F34AAA0D80265AC3DBC /* Pods-OSXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSXTests/Pods-OSXTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83D985799DE2A0205FFF4FC4 /* Pods-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTests/Pods-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YLMomentTest+LangVi.m"; sourceTree = "<group>"; };
@@ -160,6 +169,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EC97D9A1EB8E1B800DE39C8 /* DaLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				3EC97D9B1EB8E1C800DE39C8 /* YLMoment.swift */,
+			);
+			name = DaLibrary;
+			sourceTree = "<group>";
+		};
+		3EC97D9E1EB8E1FD00DE39C8 /* DaLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				3EC97D9F1EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m */,
+				3EC97DA01EB8E20800DE39C8 /* YLMomentTests+Age.m */,
+			);
+			name = DaLibrary;
+			sourceTree = "<group>";
+		};
 		48D0935798B1CC29CADC4A3C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +226,7 @@
 		F425CFD5182844D1002CABDC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3EC97D9E1EB8E1FD00DE39C8 /* DaLibrary */,
 				F48F2F2C18ACDD9700173D37 /* Main */,
 				F425CFD6182844D1002CABDC /* Core */,
 				F425CFDD182844D1002CABDC /* Lang */,
@@ -216,8 +243,6 @@
 				F425CFDA182844D1002CABDC /* YLMomentTests+Getters_Setters.m */,
 				F425CFDB182844D1002CABDC /* YLMomentTests+Helpers.m */,
 				F425CFDC182844D1002CABDC /* YLMomentTests+SOD_EOD.m */,
-				3EB7954F1A77C1CE00B37076 /* YLMomentTests_FriendlyStrings.m */,
-				3E02B1FF1BC361BB0002AA71 /* YLMomentTests+Age.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -267,6 +292,7 @@
 		F4605D09181C326A007F83EF = {
 			isa = PBXGroup;
 			children = (
+				3EC97D9A1EB8E1B800DE39C8 /* DaLibrary */,
 				F43B57F318B22E41001E9993 /* YLMoment */,
 				F425CFD5182844D1002CABDC /* Tests */,
 				F4605D35181C33AA007F83EF /* iOSTests */,
@@ -380,6 +406,9 @@
 					F425CFC41828296E002CABDC = {
 						TestTargetID = F4605D2C181C33AA007F83EF;
 					};
+					F4605D2C181C33AA007F83EF = {
+						LastSwiftMigration = 0830;
+					};
 				};
 			};
 			buildConfigurationList = F4605D0D181C326A007F83EF /* Build configuration list for PBXProject "YLMomentTests" */;
@@ -445,7 +474,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		468D91F3C56541B5921CE37D /* [CP] Embed Pods Frameworks */ = {
@@ -475,7 +504,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		66E945E1ACFBF0E214A513BE /* [CP] Copy Pods Resources */ = {
@@ -532,12 +561,14 @@
 			files = (
 				F43B580218B22E41001E9993 /* YLMomentObject.m in Sources */,
 				CEE753971BECA4A9001FF6ED /* YLMoment+Description.m in Sources */,
+				3EC97D9D1EB8E1C800DE39C8 /* YLMoment.swift in Sources */,
 				CEE753AD1BECD4D9001FF6ED /* YLMoment+Bundle.m in Sources */,
 				F425CFEC182844E1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 				F425CFED182844E1002CABDC /* YLMomentTests+Create.m in Sources */,
 				F425CFEE182844E1002CABDC /* YLMomentTests+Format.m in Sources */,
 				F425CFEF182844E1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
 				CEE7B5E31DD5F9DB0020C0F3 /* YLMomentTest+LangIt.m in Sources */,
+				3EC97DA21EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m in Sources */,
 				F425CFF0182844E1002CABDC /* YLMomentTests+Helpers.m in Sources */,
 				F425CFF1182844E1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				CEE753A51BECC929001FF6ED /* YLMoment+Components.m in Sources */,
@@ -550,11 +581,11 @@
 				CEE7539C1BECC308001FF6ED /* YLMoment+Manipulation.m in Sources */,
 				CEE753A91BECCB26001FF6ED /* YLMoment+Helpers.m in Sources */,
 				F425CFF4182844E1002CABDC /* YLMomentTest+LangFr.m in Sources */,
+				3EC97DA41EB8E20800DE39C8 /* YLMomentTests+Age.m in Sources */,
 				FA3A095618BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				CEE753A11BECC72E001FF6ED /* YLMoment+RelativeTime.m in Sources */,
 				CEE7B5E41DD5FC970020C0F3 /* YLMomentTest+LangVi.m in Sources */,
 				F4DF36B1183BA7700091E80A /* YLMomentTest+LangNl.m in Sources */,
-				3E02B2011BC361BB0002AA71 /* YLMomentTests+Age.m in Sources */,
 				F425CFF5182844E1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,12 +596,14 @@
 			files = (
 				CEE7539B1BECC308001FF6ED /* YLMoment+Manipulation.m in Sources */,
 				F43B580118B22E41001E9993 /* YLMomentObject.m in Sources */,
+				3EC97D9C1EB8E1C800DE39C8 /* YLMoment.swift in Sources */,
 				CEE753961BECA3A2001FF6ED /* YLMoment+Description.m in Sources */,
 				F425CFE2182844D1002CABDC /* YLMomentTests+Add_Substract.m in Sources */,
 				CEE753A81BECCB26001FF6ED /* YLMoment+Helpers.m in Sources */,
 				CEE753AC1BECD4D9001FF6ED /* YLMoment+Bundle.m in Sources */,
 				CEE753A41BECC929001FF6ED /* YLMoment+Components.m in Sources */,
 				F425CFE5182844D1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
+				3EC97DA11EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m in Sources */,
 				CEE753A01BECC72E001FF6ED /* YLMoment+RelativeTime.m in Sources */,
 				F425CFE3182844D1002CABDC /* YLMomentTests+Create.m in Sources */,
 				F425CFEA182844D1002CABDC /* YLMomentTest+LangFr.m in Sources */,
@@ -583,11 +616,11 @@
 				A54704E318B0759600497886 /* YLMomentTest+LangPt.m in Sources */,
 				F425CFEB182844D1002CABDC /* YLMomentTest+LangSq.m in Sources */,
 				F48F2F2E18ACDD9700173D37 /* YLMomentLocalizableStringsTest.m in Sources */,
+				3EC97DA31EB8E20800DE39C8 /* YLMomentTests+Age.m in Sources */,
 				276FA9FF18D02B18003A3E3F /* YLMomentTest+LangZh.m in Sources */,
 				F425CFE7182844D1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
 				FA3A095518BDECE5001B2475 /* YLMomentTest+LangJa.m in Sources */,
 				F425CFE9182844D1002CABDC /* YLMomentTest+LangEs.m in Sources */,
-				3E02B2001BC361BB0002AA71 /* YLMomentTests+Age.m in Sources */,
 				F4FDEA391838D38D00DB3901 /* YLMomentTest+LangNl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -844,6 +877,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "../YLMoment/iOSTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -888,6 +922,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "../YLMoment/iOSTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
