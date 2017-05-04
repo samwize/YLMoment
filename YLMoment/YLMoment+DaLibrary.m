@@ -9,7 +9,7 @@
 #import "YLMoment+DaLibrary.h"
 #import "YLMoment+Description.h"
 
-static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTimeLocalizable";
+static NSString * const kYLMomentRelativeTimeStringTable99 = @"YLMomentRelativeTimeLocalizable";
 
 #pragma mark Additional classes added by Junda <junda@just2us.com>
 
@@ -26,12 +26,12 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"dMMMyyyy" options:0 locale:[NSLocale currentLocale]];
         return [self format:dateFormat];
     } else if (diffInDays == -1) {
-        return [langBundle localizedStringForKey:@"Tomorrow" value:@"" table:kYLMomentRelativeTimeStringTable];
+        return [langBundle localizedStringForKey:@"Tomorrow" value:@"" table:kYLMomentRelativeTimeStringTable99];
     } else if (diffInDays == 0) {
         // TODO: localize Today and Yesterday in strings file
-        return [langBundle localizedStringForKey:@"Today" value:@"" table:kYLMomentRelativeTimeStringTable];
+        return [langBundle localizedStringForKey:@"Today" value:@"" table:kYLMomentRelativeTimeStringTable99];
     } else if (diffInDays == 1) {
-        return [langBundle localizedStringForKey:@"Yesterday" value:@"" table:kYLMomentRelativeTimeStringTable];
+        return [langBundle localizedStringForKey:@"Yesterday" value:@"" table:kYLMomentRelativeTimeStringTable99];
     } else if (diffInDays < 7) {
         NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:@"EEEE" options:0 locale:[NSLocale currentLocale]];
         return [self format:dateFormat];
@@ -66,13 +66,13 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     NSInteger hour = [dateComponents hour];
     
     if (hour < 6) {
-        return [langBundle localizedStringForKey:@"Wee Hours" value:@"" table:kYLMomentRelativeTimeStringTable];
+        return [langBundle localizedStringForKey:@"Wee Hours" value:@"" table:kYLMomentRelativeTimeStringTable99];
     } else if (hour < 12) {
-        return [langBundle localizedStringForKey:@"Morning" value:@"" table:kYLMomentRelativeTimeStringTable];
+        return [langBundle localizedStringForKey:@"Morning" value:@"" table:kYLMomentRelativeTimeStringTable99];
     } else if (hour < 18) {
-        return [langBundle localizedStringForKey:@"Afternoon" value:@"" table:kYLMomentRelativeTimeStringTable];
+        return [langBundle localizedStringForKey:@"Afternoon" value:@"" table:kYLMomentRelativeTimeStringTable99];
     } else {
-        return [langBundle localizedStringForKey:@"Night" value:@"" table:kYLMomentRelativeTimeStringTable];
+        return [langBundle localizedStringForKey:@"Night" value:@"" table:kYLMomentRelativeTimeStringTable99];
     }
 }
 
@@ -129,27 +129,27 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
     int unit                  = 0;
     if (seconds < 45)
     {
-        formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:kYLMomentRelativeTimeStringTable];
+        formattedString = [langBundle localizedStringForKey:@"s" value:@"a few seconds" table:kYLMomentRelativeTimeStringTable99];
         unit            = seconds;
     } else if (minutes == 1)
     {
-        formattedString = [langBundle localizedStringForKey:@"m1" value:@"%d minute" table:kYLMomentRelativeTimeStringTable];
+        formattedString = [langBundle localizedStringForKey:@"m1" value:@"%d minute" table:kYLMomentRelativeTimeStringTable99];
         unit            = minutes;
     } else if (minutes < 45)
     {
-        formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:kYLMomentRelativeTimeStringTable];
+        formattedString = [langBundle localizedStringForKey:@"mm" value:@"%d minutes" table:kYLMomentRelativeTimeStringTable99];
         unit            = minutes;
     } else if (minutes < 90)
     {
-        formattedString = [langBundle localizedStringForKey:@"h1" value:@"%d hour" table:kYLMomentRelativeTimeStringTable];
+        formattedString = [langBundle localizedStringForKey:@"h1" value:@"%d hour" table:kYLMomentRelativeTimeStringTable99];
         unit            = hours;
     } else if (hours < 24)
     {
-        formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
+        formattedString = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable99];
         unit            = hours;
     } else if (hours == 24)
     {
-        formattedString = [langBundle localizedStringForKey:@"d1" value:@"%d day" table:kYLMomentRelativeTimeStringTable];
+        formattedString = [langBundle localizedStringForKey:@"d1" value:@"%d day" table:kYLMomentRelativeTimeStringTable99];
         unit            = days;
     } else if (days <= 7)
     {
@@ -157,15 +157,15 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         int day_part = floor(hours/24);
         int hours_part = (int)hours % 24;
         
-        NSString *formattedDay = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable];
+        NSString *formattedDay = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable99];
         if (day_part == 1)
-            formattedDay = [langBundle localizedStringForKey:@"d1" value:@"%d day" table:kYLMomentRelativeTimeStringTable];
+            formattedDay = [langBundle localizedStringForKey:@"d1" value:@"%d day" table:kYLMomentRelativeTimeStringTable99];
         
-        NSString *formattedHours = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable];
+        NSString *formattedHours = [langBundle localizedStringForKey:@"hh" value:@"%d hours" table:kYLMomentRelativeTimeStringTable99];
         if (hours_part == 0)
             formattedHours = nil;
         else if (hours_part == 1)
-            formattedHours = [langBundle localizedStringForKey:@"h1" value:@"%d hour" table:kYLMomentRelativeTimeStringTable];
+            formattedHours = [langBundle localizedStringForKey:@"h1" value:@"%d hour" table:kYLMomentRelativeTimeStringTable99];
         
         // Resolve hours part
         if (formattedHours)
@@ -179,7 +179,7 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         unit = day_part;
     } else
     {
-        formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable];
+        formattedString = [langBundle localizedStringForKey:@"dd" value:@"%d days" table:kYLMomentRelativeTimeStringTable99];
         unit            = days;
     }
     formattedString = [NSString stringWithFormat:formattedString, unit];
@@ -192,10 +192,10 @@ static NSString * const kYLMomentRelativeTimeStringTable = @"YLMomentRelativeTim
         NSString *suffixedString = nil;
         if (isFuture)
         {
-            suffixedString = [langBundle localizedStringForKey:@"future" value:@"in %@" table:kYLMomentRelativeTimeStringTable];
+            suffixedString = [langBundle localizedStringForKey:@"future" value:@"in %@" table:kYLMomentRelativeTimeStringTable99];
         } else
         {
-            suffixedString = [langBundle localizedStringForKey:@"past" value:@"%@ ago" table:kYLMomentRelativeTimeStringTable];
+            suffixedString = [langBundle localizedStringForKey:@"past" value:@"%@ ago" table:kYLMomentRelativeTimeStringTable99];
         }
         
         formattedString = [NSString stringWithFormat:suffixedString, formattedString];
