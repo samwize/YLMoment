@@ -16,8 +16,6 @@
 		3EC97DA21EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97D9F1EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m */; };
 		3EC97DA31EB8E20800DE39C8 /* YLMomentTests+Age.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DA01EB8E20800DE39C8 /* YLMomentTests+Age.m */; };
 		3EC97DA41EB8E20800DE39C8 /* YLMomentTests+Age.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DA01EB8E20800DE39C8 /* YLMomentTests+Age.m */; };
-		3EC97DA61EB8E84D00DE39C8 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DA51EB8E84D00DE39C8 /* YLMoment.m */; };
-		3EC97DA71EB8E84D00DE39C8 /* YLMoment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DA51EB8E84D00DE39C8 /* YLMoment.m */; };
 		3EC97DAC1EB8EAE200DE39C8 /* YLMoment+DaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DAB1EB8EAE200DE39C8 /* YLMoment+DaLibrary.m */; };
 		3EC97DAD1EB8EAE200DE39C8 /* YLMoment+DaLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC97DAB1EB8EAE200DE39C8 /* YLMoment+DaLibrary.m */; };
 		A083DAF91BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m in Sources */ = {isa = PBXBuildFile; fileRef = A083DAF81BE1A25F00B0EFC9 /* YLMomentTest+LangVi.m */; };
@@ -87,7 +85,6 @@
 		3EC97D9B1EB8E1C800DE39C8 /* YLMoment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YLMoment.swift; path = ../YLMoment/YLMoment.swift; sourceTree = "<group>"; };
 		3EC97D9F1EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YLMomentTests_FriendlyStrings.m; path = Core/YLMomentTests_FriendlyStrings.m; sourceTree = "<group>"; };
 		3EC97DA01EB8E20800DE39C8 /* YLMomentTests+Age.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YLMomentTests+Age.m"; path = "Core/YLMomentTests+Age.m"; sourceTree = "<group>"; };
-		3EC97DA51EB8E84D00DE39C8 /* YLMoment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLMoment.m; sourceTree = "<group>"; };
 		3EC97DA81EB8E97100DE39C8 /* iOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "iOSTests-Bridging-Header.h"; path = "../YLMoment/iOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		3EC97DA91EB8E97100DE39C8 /* OSXTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OSXTests-Bridging-Header.h"; path = "../YLMoment/OSXTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		3EC97DAA1EB8EA8100DE39C8 /* YLMoment+DaLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "YLMoment+DaLibrary.h"; path = "../YLMoment/YLMoment+DaLibrary.h"; sourceTree = "<group>"; };
@@ -281,7 +278,6 @@
 			children = (
 				A0B09FB81BE1A52C00BF37AC /* Localization */,
 				CEE753981BECAA4C001FF6ED /* YLMoment.h */,
-				3EC97DA51EB8E84D00DE39C8 /* YLMoment.m */,
 				F43B57FD18B22E41001E9993 /* YLMomentObject.h */,
 				F43B57FE18B22E41001E9993 /* YLMomentObject.m */,
 				CEE753AE1BECD714001FF6ED /* YLMoment+Bundle.h */,
@@ -583,7 +579,6 @@
 				F425CFEE182844E1002CABDC /* YLMomentTests+Format.m in Sources */,
 				F425CFEF182844E1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
 				CEE7B5E31DD5F9DB0020C0F3 /* YLMomentTest+LangIt.m in Sources */,
-				3EC97DA71EB8E84D00DE39C8 /* YLMoment.m in Sources */,
 				3EC97DA21EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m in Sources */,
 				F425CFF0182844E1002CABDC /* YLMomentTests+Helpers.m in Sources */,
 				F425CFF1182844E1002CABDC /* YLMomentTests+SOD_EOD.m in Sources */,
@@ -620,7 +615,6 @@
 				CEE753AC1BECD4D9001FF6ED /* YLMoment+Bundle.m in Sources */,
 				CEE753A41BECC929001FF6ED /* YLMoment+Components.m in Sources */,
 				F425CFE5182844D1002CABDC /* YLMomentTests+Getters_Setters.m in Sources */,
-				3EC97DA61EB8E84D00DE39C8 /* YLMoment.m in Sources */,
 				3EC97DA11EB8E20800DE39C8 /* YLMomentTests_FriendlyStrings.m in Sources */,
 				CEE753A01BECC72E001FF6ED /* YLMoment+RelativeTime.m in Sources */,
 				F425CFE3182844D1002CABDC /* YLMomentTests+Create.m in Sources */,
