@@ -27,7 +27,7 @@ extension YLMoment {
     public func ageFromDate(_ date: Date, withDelimiter delimiter: String? = nil, withMaxComponents maxComponents: Int = 3) -> String {
         var maxComponents = maxComponents
         
-        let langBundle = self.langBundle()!
+        let langBundle = self.localBundle()!
         
         let calendar = Calendar.current
         

@@ -11,6 +11,14 @@
 
 static NSString * const kYLMomentRelativeTimeStringTable99 = @"YLMomentRelativeTimeLocalizable";
 
+@interface YLMoment (Private)
+    
+#pragma mark langs
+@property (nonatomic, strong) NSBundle *langBundle;
+    
+@end
+
+
 #pragma mark Additional classes added by Junda <junda@just2us.com>
 
 @implementation YLMoment (DaLibrary)
@@ -215,7 +223,7 @@ static NSString * const kYLMomentRelativeTimeStringTable99 = @"YLMomentRelativeT
 #pragma mark - Helpers
 
 // Expose this to Swift
-- (NSBundle*)langBundle {
+- (NSBundle*)localBundle {
     return self.langBundle ?: [[[self class] proxy] langBundle] ?: [NSBundle mainBundle];
 }
 

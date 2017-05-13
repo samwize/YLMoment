@@ -76,6 +76,6 @@
 
 #pragma mark - Helpers
 
-- (NSBundle*)langBundle;
+- (NSBundle*)localBundle;
 
 @end
