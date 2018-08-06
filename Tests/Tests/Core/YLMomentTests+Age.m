@@ -12,7 +12,7 @@
 
 #import "YLMoment.h"
 #import "iOSTests-Swift.h"
-//#import "iOSTests-Bridging-Header.h"
+#import "iOSTests-Bridging-Header.h"
 
 @interface YLMomentTests_Age : XCTestCase
 

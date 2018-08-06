@@ -30,51 +30,12 @@ extension YLMoment {
         let langBundle = self.localBundle()!
         
         let calendar = Calendar.current
-        
-        // Ensure date of components1 < components2
-        // Supposed if age is negative, the method will assume an absolute value
-        var components1, components2: DateComponents
-        if (self.date().timeIntervalSince(date) < 0) {
-            components1 = (calendar as NSCalendar).components([.year, .month, .day], from: self.date())
-            components2 = (calendar as NSCalendar).components([.year, .month, .day], from: date)
-        } else {
-            components2 = (calendar as NSCalendar).components([.year, .month, .day], from: self.date())
-            components1 = (calendar as NSCalendar).components([.year, .month, .day], from: date)
-        }
+        let c = Set<Calendar.Component>(arrayLiteral: Calendar.Component.year, Calendar.Component.month, Calendar.Component.day)
+        let components = calendar.dateComponents(c, from: self.date(), to: date)
 
-        var years = components2.year! - components1.year!
-        
-        var months = components2.month! - components1.month!
-        if months < 0 {
-            months += 12
-            years -= 1
-        }
-        
-        var days = components2.day! - components1.day!
-        if days < 0 {
-            // Number of days last month
-            var componentsLastMonth = components2
-            if componentsLastMonth.month == 0 {
-                componentsLastMonth.month = 12
-                if let y = componentsLastMonth.year {
-                    componentsLastMonth.year = y - 1
-                }
-            } else {
-                if let m = componentsLastMonth.month {
-                    componentsLastMonth.month = m - 1
-                }
-            }
-            if let lastMonthDate = calendar.date(from: componentsLastMonth) {
-                let daysInMonth = (calendar as NSCalendar).range(of: .day, in: .month, for: lastMonthDate)
-                days += daysInMonth.length
-            }
-            months -= 1
-        }
-
-        // Absolute values
-        years = abs(years)
-        months = abs(months)
-        days = abs(days)
+        let years = components.year ?? 0
+        let months = components.month ?? 0
+        let days = components.day ?? 0
         
         // Form up the age string
         var age = ""
